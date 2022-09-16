@@ -1,6 +1,5 @@
 package Bread;
 
-import javax.swing.*;
 
 public class Bread {
     //Data
@@ -20,7 +19,14 @@ public class Bread {
      this.starter = starter;
  }
 
-    //Getters and Setters
+    public Bread(double flour, double water, double salt, double yeast, double starter) {
+        this.flour = flour;
+        this.water = water;
+        this.salt = salt;
+        this.yeast = yeast;
+        this.starter = starter;
+    }
+//Getters and Setters
 
     public double getFlour() {
         return flour;
@@ -68,11 +74,13 @@ public class Bread {
              " yet!");
 
     }
-   public void getIngredients(){
-       return getFlour(), getSalt(), getStarter(), getWater(), getYeast();
 
-   }
-    */
+    **/
+//   public String getIngredients(){
+//       return "Flour: " + getFlour() + "\nSalt: " +  getSalt() + "\nStarter: " +  getStarter(), getWater(), getYeast();
+//
+//   }
+//
 
 
     //String toString

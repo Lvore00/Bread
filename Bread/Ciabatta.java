@@ -3,11 +3,11 @@ package Bread;
 public class Ciabatta extends Bread{
     //Data
 
-    private double flour;
-    private double water;
-    private double salt;
-    private double yeast;
-    private double starter;
+//    private double flour;
+//    private double water;
+//    private double salt;
+//    private double yeast;
+//    private double starter;
     private double sugar;
     private double bakingP;
     private String breadName;
@@ -19,11 +19,7 @@ public class Ciabatta extends Bread{
     public Ciabatta(double flour, double water, double salt, double yeast,
                     double starter, double sugar, double bakingP,
                     String breadName, String state, String recipe) {
-        this.flour = flour;
-        this.water = water;
-        this.salt = salt;
-        this.yeast = yeast;
-        this.starter = starter;
+      super(flour, water, salt, yeast, starter);
         this.sugar = sugar;
         this.bakingP = bakingP;
         this.breadName = breadName;
@@ -33,45 +29,10 @@ public class Ciabatta extends Bread{
 
     //Getters and Setters
 
-    public double getFlour() {
-        return flour;
-    }
-
-    public void setFlour(double flour) {
-        this.flour = flour;
-    }
-
-    public double getWater() {
-        return water;
-    }
-
-    public void setWater(double water) {
-        this.water = water;
-    }
-
-    public double getSalt() {
-        return salt;
-    }
-
-    public void setSalt(double salt) {
-        this.salt = salt;
-    }
-
-    public double getYeast() {
-        return yeast;
-    }
-
-    public void setYeast(double yeast) {
-        this.yeast = yeast;
-    }
-
-    public double getStarter() {
-        return starter;
-    }
-
-    public void setStarter(double starter) {
-        this.starter = starter;
-    }
+//    public void setFlour(double amount){
+//        super.setFlour(amount);
+//    }
+//
 
     public double getSugar() {
         return sugar;
@@ -135,13 +96,13 @@ public class Ciabatta extends Bread{
 
     public String toString() {
         return "Ciabatta: " +
-                flour + " cup(s) of flour" + "\n" +
-                water + " cup(s) of water" + "\n" +
-                salt + " tsp(s) of salt" + "\n" +
-                yeast + " tsp(s) of yeast" + "\n" +
+                super.getFlour()+ " cup(s) of flour" + "\n" +
+                super.getWater() + " cup(s) of water" + "\n" +
+                super.getSalt() + " tsp(s) of salt" + "\n" +
+                super.getYeast() + " tsp(s) of yeast" + "\n" +
                 sugar + " cup(s) of sugar" + "\n" +
                 bakingP + " tsp(s) of baking powder" + "\n" +
-                starter + " cup(s) of ripe ciabatta starter" + "\n" +
+                super.getStarter() + " cup(s) of ripe ciabatta starter" + "\n" +
                 "Bread Name: " + breadName + "\n" +
                 "Bread State: " + state + "\n" +
                 "Recipe: " + recipe;
