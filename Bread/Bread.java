@@ -10,23 +10,21 @@ public class Bread {
     private double yeast;
     private double starter;
 
+    public Bread(){
+        setFlour(3.0);
+        setWater(2.0);
+        setSalt(1.0);
+        setYeast(1.0);
+        setStarter(0.5);
+    }
+
+
     //Constructors
- public Bread (){
-     this.flour = flour;
-     this.water = water;
-     this.salt = salt;
-     this.yeast = yeast;
-     this.starter = starter;
+ public Bread (double flour, double water, double salt, double yeast, double starter){
+     super(flour,water,salt,yeast,starter);
  }
 
-    public Bread(double flour, double water, double salt, double yeast, double starter) {
-        this.flour = flour;
-        this.water = water;
-        this.salt = salt;
-        this.yeast = yeast;
-        this.starter = starter;
-    }
-//Getters and Setters
+    //Getters and Setters
 
     public double getFlour() {
         return flour;
@@ -69,22 +67,33 @@ public class Bread {
     }
 
     //Instance Methods
-   /** public void bake(){
-     System.out.println("Bread is being baked! Not baked all the way" +
-             " yet!");
+   public void bake(){
+     boolean bake = false;
+     if(bake)
+         System.out.println("The bead is not done baking yet!");
+     else
+         System.out.println("The bread is baked and ready!");
+   }
 
-    }
+   @Override
+   public String getRecipe(){
+     return "1. Mix together the flour, salt and yeast, then add warm water and mix. The “dough” " +
+             "will be very wet and sloppy, not kneadable at all – " +
+             "this is what you want!" + "\n" +
+             "2. Let rise" + "\n"
+             + "3. Pull dough out and knead until tough to fold" + "\n" +
+             "3. Put into a hot pan and bake for 40 minutes until stiff";
+   }
 
-    **/
-//   public String getIngredients(){
-//       return "Flour: " + getFlour() + "\nSalt: " +  getSalt() + "\nStarter: " +  getStarter(), getWater(), getYeast();
-//
-//   }
-//
+   @Override
+   public String getIngredients(){
+     return super.Ingredients();
+   }
 
 
     //String toString
 
+    @Override
     public String toString() {
         return "Bread: " +
                 flour + " cup(s) of flour"+ "\n" +
