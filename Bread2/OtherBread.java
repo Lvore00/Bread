@@ -5,7 +5,7 @@ public class OtherBread extends Bread{
     int yeast;
 
     public OtherBread(){
-        super(10,10);
+        super(10,10);         //Do this to Ciabatta and other bread types Saturday
         yeast = 1;
 
     }
