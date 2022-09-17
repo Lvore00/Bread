@@ -3,76 +3,35 @@ package Bread;
 public class Doughnut extends Bread{
     //Data
 
-    private double flour;
-    private double water;
-    private double salt;
-    private double yeast;
-    private double starter;
     private double sugar;
     private double bakingP;
     private String breadName;
     private String state;
-    private String recipe;
+
+
+    public Doughnut(){
+            super(6.0,4.5,2.0,1.0,1.2);
+            setBakingP(2.25);
+            setBreadName("Doughnut");
+            setState("Not done!");
+            setSugar(5.5);
+
+        }
+    }
 
     // Constructor
 
     public Doughnut(double flour, double water, double salt,
                     double yeast, double starter, double sugar, double bakingP,
-                    String breadName, String state, String recipe) {
-        this.flour = flour;
-        this.water = water;
-        this.salt = salt;
-        this.yeast = yeast;
-        this.starter = starter;
+                    String breadName, String state) {
+      super(flour, water, salt, yeast, starter);
         this.sugar = sugar;
         this.bakingP = bakingP;
         this.breadName = breadName;
         this.state = state;
-        this.recipe = recipe;
     }
 
     //Getters and Setters
-
-    public double getFlour() {
-        return flour;
-    }
-
-    public void setFlour(double flour) {
-        this.flour = flour;
-    }
-
-    public double getWater() {
-        return water;
-    }
-
-    public void setWater(double water) {
-        this.water = water;
-    }
-
-    public double getSalt() {
-        return salt;
-    }
-
-    public void setSalt(double salt) {
-        this.salt = salt;
-    }
-
-    public double getYeast() {
-        return yeast;
-    }
-
-    public void setYeast(double yeast) {
-        this.yeast = yeast;
-    }
-
-    public double getStarter() {
-        return starter;
-    }
-
-    public void setStarter(double starter) {
-        this.starter = starter;
-    }
-
     public double getSugar() {
         return sugar;
     }
@@ -105,13 +64,6 @@ public class Doughnut extends Bread{
         this.state = state;
     }
 
-    public String getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
-    }
 
     //Instance Method
     public void howtoDoughnut(){
@@ -119,32 +71,27 @@ public class Doughnut extends Bread{
                 "rolling out and baking!");
     }
 
-    //public void recipe(){
-       // return
- //   }
+    @Override
+    public String getIngredients(){
+        return super.Ingredients() + "\nSugar: " + getSugar() +
+                "\nBaking Powder: " + getBakingP() +
+                "\nBread Name: " + getBreadName() +
+                "\nBread State: " + getState();
+    }
 
-
-
-
-
-
-
-
+ public String getRecipe(){
+        return " 1. Mix listed ingredients" + "\n" +
+                "2. Roll out the rested dough" + "\n" +
+                "3. Flour rolling pin and rolling surface and roll out the dough" +
+                "\n" + "4. Cut out the dough" + "\n" +
+                "5. Fry the dough in oil 1-2 minutes each side";
+ }
 
     //String toString
-    public String toString(){
-
-        return "Doughnut: " +
-                flour + " cup(s) of flour" + "\n" +
-                water + " cup(s) of water" + "\n" +
-                salt + " tsp(s) of salt" + "\n" +
-                yeast + " tsp(s) of yeast" + "\n" +
-                sugar + " cup(s) of sugar" + "\n" +
-                bakingP + " tsp(s) of baking powder" + "\n" +
-                starter + " cup(s) of ripe doughnut starter" + "\n" +
-                "Bread Name: " + breadName + "\n" +
-                "Bread State: " + state + "\n" +
-                "Recipe: " + recipe;
+    @Override
+    public String toString() {
+        return getIngredients() + "\n" + getRecipe() +
+                "\n" + getState();
     }
 
 }
