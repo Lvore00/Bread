@@ -3,70 +3,28 @@ package Bread;
 public class Sourdough extends Bread{
     //Data
 
-    private double flour;
-    private double water;
-    private double salt;
-    private double yeast;
-    private double starter;
     private String breadName;
     private String state;
-    private String recipe;
+
+    public Sourdough(){
+        super(5.0,3.0,1.0,2.0,2.0);
+        setBreadName("Sourdough");
+        setState("Not done!");
+
+    }
+
 
     // Constructor
 
     public Sourdough(double flour, double water, double salt,
                      double yeast, double starter, String breadName,
-                     String state, String recipe) {
-        this.flour = flour;
-        this.water = water;
-        this.salt = salt;
-        this.yeast = yeast;
-        this.starter = starter;
+                     String state) {
+        super(flour, water, salt, yeast, starter);
         this.breadName = breadName;
         this.state = state;
-        this.recipe = recipe;
     }
 
     // Getters and Setters
-    public double getFlour() {
-        return flour;
-    }
-
-    public void setFlour(double flour) {
-        this.flour = flour;
-    }
-
-    public double getWater() {
-        return water;
-    }
-
-    public void setWater(double water) {
-        this.water = water;
-    }
-
-    public double getSalt() {
-        return salt;
-    }
-
-    public void setSalt(double salt) {
-        this.salt = salt;
-    }
-
-    public double getYeast() {
-        return yeast;
-    }
-
-    public void setYeast(double yeast) {
-        this.yeast = yeast;
-    }
-
-    public double getStarter() {
-        return starter;
-    }
-
-    public void setStarter(double starter) {
-        this.starter = starter;
-    }
 
     public String getBreadName() {
         return breadName;
@@ -84,40 +42,29 @@ public class Sourdough extends Bread{
         this.state = state;
     }
 
-    public String getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
-    }
-
     // Instance Methods
 
     public void howtoSourdough(){
         System.out.println("Before baking: Make sure to leave newly mixed dough" +
                 " in a bowl and covered for 30 minutes to 1 hour to rest before kneading out");
     }
- //   public void recipe() {
-  //      this(5.00, 1.50, 2.50,1.00,1.00,
-  //              "'Sourdough Bread'", "Being Baked", "Mix, Rest, Knead, Bake!"); */
-   // }
-
-
-
-
-    // String toString
-
-    public String toString(){
-
-        return "Sourdough: " +
-                flour + " cup(s) of flour" + "\n" +
-                water + " cup(s) of water" + "\n" +
-                salt + " tsp(s) of salt" + "\n" +
-                yeast + " tsp(s) of yeast" + "\n" +
-                starter + " cup(s) of ripe sourdough starter" + "\n" +
-                "Bread Name: " + breadName + "\n" +
-                "Bread State: " + state + "\n" +
-                "Recipe: " + recipe;
+    public String getIngredients(){
+        return super.Ingredients() +
+                "\nBread Name: " + getBreadName() +
+                "\nBread State: " + getState();
     }
+
+    public String getRecipe() {
+        return "1. After letting dough rest, roll it on a floured surface" + "\n" +
+                "2. Put into bread pan that is oiled" + "\n"
+                + "3. Bake bread for 3 hours on 340 degrees F until risen";
+    }
+
+    //String toString
+    @Override
+    public String toString() {
+        return getIngredients() + "\n" + getRecipe() +
+                "\n" + getState();
+    }
+
 }
