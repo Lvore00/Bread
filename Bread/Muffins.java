@@ -3,75 +3,34 @@ package Bread;
 public class Muffins extends Bread {
     //Data
 
-    private double flour;
-    private double water;
-    private double salt;
-    private double yeast;
-    private double starter;
+
     private double sugar;
     private double bakingP;
     private String breadName;
     private String state;
-    private String recipe;
+
+    public Muffins(){
+        super(7.5,3.5,2.5,1.5,1.25);
+        setBakingP(2.25);
+        setBreadName("Muffins");
+        setState("Not done!");
+        setSugar(4.0);
+
+    }
 
     // Constructor
 
     public Muffins(double flour, double water, double salt, double yeast,
                    double starter, double sugar, double bakingP,
-                   String breadName, String state, String recipe) {
-        this.flour = flour;
-        this.water = water;
-        this.salt = salt;
-        this.yeast = yeast;
-        this.starter = starter;
+                   String breadName, String state) {
+        super(flour, water, salt, yeast, starter);
         this.sugar = sugar;
         this.bakingP = bakingP;
         this.breadName = breadName;
         this.state = state;
-        this.recipe = recipe;
     }
 
     // Getters and Setters
-
-    public double getFlour() {
-        return flour;
-    }
-
-    public void setFlour(double flour) {
-        this.flour = flour;
-    }
-
-    public double getWater() {
-        return water;
-    }
-
-    public void setWater(double water) {
-        this.water = water;
-    }
-
-    public double getSalt() {
-        return salt;
-    }
-
-    public void setSalt(double salt) {
-        this.salt = salt;
-    }
-
-    public double getYeast() {
-        return yeast;
-    }
-
-    public void setYeast(double yeast) {
-        this.yeast = yeast;
-    }
-
-    public double getStarter() {
-        return starter;
-    }
-
-    public void setStarter(double starter) {
-        this.starter = starter;
-    }
 
     public double getSugar() {
         return sugar;
@@ -105,13 +64,6 @@ public class Muffins extends Bread {
         this.state = state;
     }
 
-    public String getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(String recipe) {
-        this.recipe = recipe;
-    }
 
 
     // Instance Methods
@@ -122,29 +74,25 @@ public class Muffins extends Bread {
                 "oven");
     }
 
-    //public void recipe(){
-    //  return
+    @Override
+    public String getIngredients(){
+        return super.Ingredients() + "\nSugar: " + getSugar() +
+                "\nBaking Powder: " + getBakingP() +
+                "\nBread Name: " + getBreadName() +
+                "\nBread State: " + getState();
+    }
 
-//}
-
-
-
-
+    public String getRecipe(){
+        return "1. Fill muffin cups half way in a muffin pan" + "\n" +
+                "2. Place into oven at 400 degrees F" + "\n" +
+                "3. Set timer to 18-24 minutes until cooked all the way through";
+    }
 
     //String toString
-    public String toString(){
-
-        return "Muffin: " +
-                "Flour: " + flour + "\n" +
-                "Water: " + water + "\n" +
-                "Salt: " + salt + "\n" +
-                "Yeast: " + yeast + "\n" +
-                "Starter: " + starter + "\n" +
-                "Sugar: " + sugar + "\n" +
-                "Baking Powder: " + bakingP + "\n" +
-                "Bread Name: " + breadName + "\n" +
-                "Bread State: " + state + "\n" +
-                "Recipe: " + recipe;
+    @Override
+    public String toString() {
+        return getIngredients() + "\n" + getRecipe() +
+                "\n" + getState();
     }
 
 
