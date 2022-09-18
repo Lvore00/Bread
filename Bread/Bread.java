@@ -85,9 +85,14 @@ public class Bread {
              "3. Put into a hot pan and bake for 40 minutes until stiff";
    }
 
-   @Override
+     @Override
    public String getIngredients(){
-     return super.Ingredients();
+     return "Bread:" + "\n" +
+             flour + "cup(s) of flour" + "\n" +
+             water + "cup(s) of water" + "\n" +
+             salt + "tsp(s) of salt" + "\n" +
+             yeast + "tsp(s) of yeast" + "\n" +
+             starter + "tsp(s) of starter" ;
    }
 
 
