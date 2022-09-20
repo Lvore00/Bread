@@ -70,14 +70,16 @@ public class Pastry extends Bread{
         System.out.println("Before you knead the pastry dough, " +
                 "make sure to let the dough set for 5-10 minutes before rolling");
  }
-
+@Override
     public String getIngredients(){
-        return super.Ingredients() + "\nSugar: " + getSugar() +
-                "\nBaking Powder: " + getBakingP() +
+        return super.getIngredients() + "\n" +
+                getSugar() + " cup(s) of Sugar" + "\n" +
+                getBakingP() + " tsp(s) of Baking Powder" + "\n" +
                 "\nBread Name: " + getBreadName() +
                 "\nBread State: " + getState();
     }
 
+@Override
     public String getRecipe(){
         return "1. Roll out dough onto a floured surface" + "\n" +
                 "2. Fill dough with any filling of your desire" + "\n" +
@@ -88,9 +90,9 @@ public class Pastry extends Bread{
     //String toString
     @Override
     public String toString() {
-        return getIngredients() + "\n" + getRecipe() +
-                "\n" + getState();
+        return getIngredients() + "\n" + getRecipe();
     }
+
 
 
 
