@@ -1,5 +1,6 @@
 package Bread;
 
+
 public class Muffins extends Bread {
     //Data
 
@@ -75,13 +76,15 @@ public class Muffins extends Bread {
     }
 
     @Override
-    public String getIngredients(){
-        return super.Ingredients() + "\nSugar: " + getSugar() +
-                "\nBaking Powder: " + getBakingP() +
+    public String getIngredients() {
+        return super.getIngredients() + "\n" +
+                getSugar() + " cup(s) of Sugar" + "\n" +
+                getBakingP() + " tsp(s) of Baking Powder" + "\n" +
                 "\nBread Name: " + getBreadName() +
                 "\nBread State: " + getState();
     }
 
+@Override
     public String getRecipe(){
         return "1. Fill muffin cups half way in a muffin pan" + "\n" +
                 "2. Place into oven at 400 degrees F" + "\n" +
@@ -91,10 +94,10 @@ public class Muffins extends Bread {
     //String toString
     @Override
     public String toString() {
-        return getIngredients() + "\n" + getRecipe() +
-                "\n" + getState();
+        return getIngredients() + "\n" + getRecipe();
     }
 
 
 
 }
+
