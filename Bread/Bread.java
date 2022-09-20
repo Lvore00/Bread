@@ -1,6 +1,5 @@
 package Bread;
 
-
 public class Bread {
     //Data
 
@@ -21,7 +20,10 @@ public class Bread {
 
     //Constructors
  public Bread (double flour, double water, double salt, double yeast, double starter){
-     super(flour,water,salt,yeast,starter);
+     this.starter = starter;
+     this.flour = flour;
+     this.salt = salt;
+     this.yeast = yeast;
  }
 
     //Getters and Setters
@@ -75,7 +77,16 @@ public class Bread {
          System.out.println("The bread is baked and ready!");
    }
 
-   @Override
+    public String getIngredients(){
+        return
+                flour + " cup(s) of flour" + "\n" +
+                        water + " cup(s) of water" + "\n" +
+                        salt + " tsp(s) of salt" + "\n" +
+                        yeast + " tsp(s) of yeast" + "\n" +
+                        starter + " tsp(s) of starter" ;
+    }
+
+
    public String getRecipe(){
      return "1. Mix together the flour, salt and yeast, then add warm water and mix. The “dough” " +
              "will be very wet and sloppy, not kneadable at all – " +
@@ -85,15 +96,6 @@ public class Bread {
              "3. Put into a hot pan and bake for 40 minutes until stiff";
    }
 
-     @Override
-   public String getIngredients(){
-     return "Bread:" + "\n" +
-             flour + "cup(s) of flour" + "\n" +
-             water + "cup(s) of water" + "\n" +
-             salt + "tsp(s) of salt" + "\n" +
-             yeast + "tsp(s) of yeast" + "\n" +
-             starter + "tsp(s) of starter" ;
-   }
 
 
     //String toString
