@@ -1,5 +1,6 @@
 package Bread;
 
+
 public class Doughnut extends Bread{
     //Data
 
@@ -16,7 +17,7 @@ public class Doughnut extends Bread{
             setState("Not done!");
             setSugar(5.5);
 
-        }
+
     }
 
     // Constructor
@@ -72,14 +73,16 @@ public class Doughnut extends Bread{
     }
 
     @Override
-    public String getIngredients(){
-        return super.Ingredients() + "\nSugar: " + getSugar() +
-                "\nBaking Powder: " + getBakingP() +
+    public String getIngredients() {
+        return super.getIngredients() + "\n" +
+                getSugar() + " cup(s) of Sugar" + "\n" +
+                getBakingP() + " tsp(s) of Baking Powder" + "\n" +
                 "\nBread Name: " + getBreadName() +
                 "\nBread State: " + getState();
     }
 
- public String getRecipe(){
+@Override
+    public String getRecipe(){
         return " 1. Mix listed ingredients" + "\n" +
                 "2. Roll out the rested dough" + "\n" +
                 "3. Flour rolling pin and rolling surface and roll out the dough" +
@@ -90,8 +93,8 @@ public class Doughnut extends Bread{
     //String toString
     @Override
     public String toString() {
-        return getIngredients() + "\n" + getRecipe() +
-                "\n" + getState();
+        return getIngredients() + "\n" + getRecipe();
     }
 
 }
+
