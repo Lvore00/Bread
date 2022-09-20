@@ -48,12 +48,14 @@ public class Sourdough extends Bread{
         System.out.println("Before baking: Make sure to leave newly mixed dough" +
                 " in a bowl and covered for 30 minutes to 1 hour to rest before kneading out");
     }
+    @Override
     public String getIngredients(){
-        return super.Ingredients() +
+        return super.getIngredients() +
                 "\nBread Name: " + getBreadName() +
                 "\nBread State: " + getState();
     }
 
+@Override
     public String getRecipe() {
         return "1. After letting dough rest, roll it on a floured surface" + "\n" +
                 "2. Put into bread pan that is oiled" + "\n"
@@ -63,8 +65,7 @@ public class Sourdough extends Bread{
     //String toString
     @Override
     public String toString() {
-        return getIngredients() + "\n" + getRecipe() +
-                "\n" + getState();
+        return getIngredients() + "\n" + getRecipe();
     }
 
 }
