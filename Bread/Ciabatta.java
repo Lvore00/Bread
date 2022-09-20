@@ -1,5 +1,6 @@
 package Bread;
 
+
 public class Ciabatta extends Bread{
     //Data
 
@@ -73,7 +74,16 @@ public class Ciabatta extends Bread{
         System.out.println("After dough mixture is made, let the dough sit and rise " +
                 "for at least 15 to 20 hours, covered");
     }
-@Override
+
+    @Override
+    public String getIngredients(){
+        return super.getIngredients() + "\n" +
+                getSugar() + " cup(s) of Sugar" + "\n" +
+                getBakingP() + " tsp(s) of Baking Powder" + "\n" +
+                "\nBread Name: " + getBreadName() +
+                "\nBread State: " + getState();
+    }
+    @Override
     public String getRecipe(){
         return " 1. Bake bread in a bake-able pan at 475 degrees F" + "\n"
                 + "2. Place into the oven, let bake until dark brown" +
@@ -81,19 +91,11 @@ public class Ciabatta extends Bread{
                 "4. Let bread rest and cool overnight";
 
     }
-    @Override
-    public String getIngredients(){
-        return super.Ingredients() + "\nSugar: " + getSugar() +
-                "\nBaking Powder: " + getBakingP() +
-                "\nBread Name: " + getBreadName() +
-                "\nBread State: " + getState();
-    }
 
 
     // String toString
 @Override
     public String toString() {
-        return getIngredients() + "\n" + getRecipe() +
-                "\n" + getState();
+        return getIngredients() + "\n" + getRecipe();
     }
 }
