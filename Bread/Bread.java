@@ -10,20 +10,17 @@ public class Bread {
     private double starter;
 
     public Bread(){
-        setFlour(3.0);
-        setWater(2.0);
-        setSalt(1.0);
-        setYeast(1.0);
-        setStarter(0.5);
+        this(3.0, 2.0, 1.0, 1.0, 0.5);
     }
 
 
     //Constructors
  public Bread (double flour, double water, double salt, double yeast, double starter){
-     this.starter = starter;
-     this.flour = flour;
-     this.salt = salt;
-     this.yeast = yeast;
+    this.flour = flour;
+    this.water = water;
+    this.salt = salt;
+    this.yeast = yeast;
+    this.starter = starter;
  }
 
     //Getters and Setters
